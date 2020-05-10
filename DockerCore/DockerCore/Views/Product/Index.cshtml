@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DockerCore.Models.Product>
+
+@{
+    ViewData["Title"] = "商品列表信息";
+}
+
+<h1>@ViewData["message"]</h1>
+
+<table class="table" style="margin-top:10px">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                名称
+            </th>
+            <th>
+                分类
+            </th>
+            <th>
+                价格
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
