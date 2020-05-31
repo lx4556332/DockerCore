@@ -26,6 +26,7 @@ namespace DockerCore.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("测试内容",null);
             ViewData["message"] = _config["MESSAGE"]??"深入浅出Net Core 与 Docker";
             var model = _repository.Products.ToList();
             return View(model);

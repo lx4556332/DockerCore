@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DockerCore.Models;
+using DockerCore.Utility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -50,6 +51,12 @@ namespace DockerCore
                     name: "default",
                     pattern: "{controller=Product}/{action=Index}/{id?}");
             });
+
+            #region ×¢²áConsul
+
+            this.Configuration.ConsulRegister();
+
+            #endregion
         }
     }
 }

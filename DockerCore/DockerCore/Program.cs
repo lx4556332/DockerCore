@@ -18,6 +18,11 @@ namespace DockerCore
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            //.ConfigureAppConfiguration(builder =>
+            //{
+            //    builder.AddCommandLine(args);//ÉèÖÃÌí¼ÓÃüÁîÐÐ
+            //})
+                //.AddCommandLine(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
