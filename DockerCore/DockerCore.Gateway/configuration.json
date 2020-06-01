@@ -1,0 +1,91 @@
+{
+  "DownstreamPathTemplate": "/{url}",
+  "DownstreamScheme": "http",
+  "DownstreamHostAndPorts": [
+    {
+      "Host": "localhost",
+      "Port": 5746
+    },
+    {
+      "Host": "10.0.1.11",
+      "Port": 5747
+    },
+    {
+      "Host": "10.0.1.11",
+      "Port": 5748
+    }
+  ],
+  "UpstreamPathTemplate": "/T/{url}",
+  "LoadBalancerOptions": {
+    "Type": "LeastConnection"
+  },
+  "UpstreamHttpMethod": [ "Put", "Delete", "POST", "PUT", "GET" ],
+  "RequestIdKey": "OcRequestId"
+}
+
+
+//{
+//  "ReRoutes": [
+//    {
+//      "DownstreamPathTemplate": "/{url}",
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5746
+//        },
+//        {
+//          "Host": "localhost",
+//          "Port": 5747
+//        },
+//        {
+//          "Host": "localhost",
+//          "Port": 5748
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/T/{url}",
+//      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+//      "LoadBalancerOptions": {
+//         "Type": "RoundRbin"
+//      }
+//    }
+//  ]
+//}
+
+//{
+//  "ReRoutes": [
+//    {
+//      "DownstreamPathTemplate": "/api/{version}/{everything}",
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "catalog.api",
+//          "Port": 80
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/api/{version}/c/{everything}",
+//      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+//    },
+//    {
+//      "DownstreamPathTemplate": "/api/{version}/{everything}",
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "basket.api",
+//          "Port": 80
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/api/{version}/b/{everything}",
+//      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+//      "AuthenticationOptions": {
+//        "AuthenticationProviderKey": "IdentityApiKey",
+//        "AllowedScopes": []
+//      }
+//    }
+
+//  ],
+//  "GlobalConfiguration": {
+//    "RequestIdKey": "OcRequestId",
+//    "AdministrationPath": "/administration"
+//  }
+//}
